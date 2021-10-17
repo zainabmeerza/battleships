@@ -187,6 +187,25 @@ class Battleships_game:
             if user_choice == "quit":
                 break
 
+    def play_guess(self):
+        """
+        Asks the players for 2 numbers to pick a coordinate
+        on the game board, and checks that the numbers entered
+        are valid
+        """
+        while True:
+            try:
+                print("-" * 150)
+                x = input("Guess a row:")
+                x = int(x)
+                y = input("Guess a column:")
+                y = int(y)
+                break
+            except ValueError:
+                print("Row and column must be valid numbers")
+
+        return (x, y)
+
 
 
 
