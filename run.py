@@ -207,6 +207,14 @@ class Battleships_game:
         return (x, y)
 
 
+    def print_board(self):
+        """
+        Print the current board status on the screen
+        """
+        self.player_board.print()
+        self.computer_board.print()
+
+
 
 
 
