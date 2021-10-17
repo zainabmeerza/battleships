@@ -1,4 +1,4 @@
-for random import randint
+from random import randint
 
 
 def random_coordinates(grid_size):
@@ -17,7 +17,7 @@ def validate_coordinates(x, y, grid_size):
     Function that checks and verifies that the pair of
     coordinates entered by the player are valid and within the grid size.
     """
-    if 0 <= x < gird_size and 0 <= y < grid_size:
+    if 0 <= x < grid_size and 0 <= y < grid_size:
         return True
     
     return False
@@ -46,7 +46,7 @@ class Board_game:
         as it updates after each player turn.
         """
         print(f"This is {self.user_name}'s Board:\n")
-        for row in self.board_size:
+        for row in self.game_board:
             print(" ".join(row))
         print("\n")
 
@@ -88,7 +88,7 @@ class Board_game:
         self.game_board = game_board
         for _ in range(self.number_of_ships):
             x, y = random_coordinates(self.board_size)
-            while (x, y) in self.number_of_ships:
+            while (x, y) in self.battle_ship:
                 x, y = random_coordinates(self.board_size)
             self.battle_ship.append((x, y))
             if self.player:
@@ -114,9 +114,10 @@ class Battleships_game:
         self.display_info()
         temporary_board = Board_game(self.board_size, self.number_of_ships, "Computer", player=False)
         self.computer_board = temporary_board
-        player_name = input("Please enter your name:\n")
-        print("-"* 150)
-        temporary_board = Board_game(self.board_size, self.number_of_ships, player_name, player=True)
+        player_name = input("Please enter your name: ")
+        print("-" * 150)
+        temporary_board = Board_game(self.board_size, self.number_of_ships,
+                                     player_name, player=True)
         self.player_board = temporary_board
 
         self.play_game()
@@ -140,7 +141,7 @@ class Battleships_game:
                     print("  __/ |                                          ")
                     print(" |___/                                         \n")
 
-                elif (self.scores['player']) == (self.scores['computer']):
+                elif (self.scores['player']) < (self.scores['computer']):
                     print("                          _                     _ ")
                     print("                         | |                   | |")
                     print(" _   _   ___   _   _     | |  ___   ___   ___  | |")
@@ -165,6 +166,9 @@ class Battleships_game:
                 print(" █║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ")
                 print(" ██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║██╗")
                 print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝\n")
+
+                print(f"{self.player_board.user_name}: " +
+                      f"{self.scores['player']} VS. Computer: {self.scores['computer']}")
         
                 break
 
@@ -183,7 +187,7 @@ class Battleships_game:
             # END OF A GAME ROUND
             self.round_score(hit_player, hit_computer)
             user_choice = input("Type \"quit\" to quit the game or any key " +
-                           "to continue.\n")
+                                "to continue.\n")
             if user_choice == "quit":
                 break
 
@@ -196,9 +200,9 @@ class Battleships_game:
         while True:
             try:
                 print("-" * 150)
-                x = input("Guess a row:")
+                x = input("Guess a row: ")
                 x = int(x)
-                y = input("Guess a column:")
+                y = input("Guess a column: ")
                 y = int(y)
                 break
             except ValueError:
@@ -210,8 +214,8 @@ class Battleships_game:
         """
         Print the current board status on the screen
         """
-        self.player_board.print()
-        self.computer_board.print()
+        self.player_board.print_board()
+        self.computer_board.print_board()
 
     def guess_valid(self, x, y):
         """
@@ -222,7 +226,7 @@ class Battleships_game:
         if not validate_coordinates(x, y, self.board_size):
             print(f"Row and column must be a value between 0 and {self.board_size - 1}")
             return False
-        if self.computer_board.guessed_already(x, y)(x, y):
+        if self.computer_board.guessed_already(x, y):
             print("You cannot guess the same coordinates more than once.")
             return False
 
@@ -242,7 +246,7 @@ class Battleships_game:
         This will output the updated scores after each round
         """
         print("-" * 150)
-        print(f"{self.player_board.username} guessed " +
+        print(f"{self.player_board.user_name} guessed " +
               f"{self.computer_board.previous_guess()}")
         if hit_player:
             self.scores["player"] += 1
@@ -256,7 +260,7 @@ class Battleships_game:
         else:
             print("That was a \033[1mMISS!\033[0m \n")
         print("The current scores are:")
-        print(f"{self.player_board.username}: " +
+        print(f"{self.player_board.user_name}: " +
               f"{self.scores['player']} VS. Computer: {self.scores['computer']}")
         print("-" * 150)
 
@@ -267,20 +271,47 @@ class Battleships_game:
         print("-" * 150)
         print("WELCOME TO A GAME OF BATTLESHIPS\n")
         print(f"Board Size: {self.board_size} x {self.board_size}.\n"
-              "Number of ships: {self.number_of_ships} \n")
+              f"Number of ships: {self.number_of_ships} \n")
         print("GAME INSTRUCTIONS:\n")
         print("Guess the ship coordinates of your opponent.\n"
               "Aim to HIT all the oponenets ships.\nEnter a"
               "row number and column number to guess the coordinates.")
         print("The top left corner is row: 0 and column: 0\n")
         print("--------------------- LEGEND -------------------------\n")
-        print("(@) = a ship on the battlefield\n(*) = coordinates guessed are a HIT!\n(X) = coordinates guessed are a MISS!\n")
+        print("(@) = a ship on the battlefield\n(*) = coordinates guessed are" 
+              + "a HIT!\n(X) = coordinates guessed are a MISS!\n")
         print("-" * 150)
 
 
+# ASK THE USER WHAT GRID SIZE THEY WOULD LIKE TO PLAY ON
+# THEN STARTS A NEW GAME
+while True:
+ 
+    print("\n")
+    print("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ███████╗██╗  ██╗██╗██████╗ ███████╗ ")
+    print("██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔════╝██║  ██║██║██╔══██╗██╔════╝")
+    print("██████╔╝███████║   ██║      ██║   ██║     █████╗      ███████╗███████║██║██████╔╝███████╗")
+    print("██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ╚════██║██╔══██║██║██╔═══╝ ╚════██║")
+    print("██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ███████║██║  ██║██║██║     ███████║")
+    print("╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝\n")
 
+    board_size = input("What grid size do you want to use? ")
 
+    print("                                       _                _    _                        ")
+    print("                                      | |              | |  (_)                       ")
+    print("  __ _   __ _  _ __ ___    ___    ___ | |_  __ _  _ __ | |_  _  _ __    __ _          ")
+    print(" / _` | / _` || '_ ` _ \  / _ \  / __|| __|/ _` || '__|| __|| || '_ \  / _` |         ")
+    print("| (_| || (_| || | | | | ||  __/  \__ \| |_| (_| || |   | |_ | || | | || (_| | _  _  _ ")
+    print(" \__, | \__,_||_| |_| |_| \___|  |___/ \__|\__,_||_|    \__||_||_| |_| \__, |(_)(_)(_)")
+    print("  __/ |                                                                 __/ |         ")
+    print(" |___/                                                                 |___/          ")
+    print("\n")
 
+    try:
+        board_size = int(board_size)
+        break
+    except ValueError:
+        print("Row and column must be numbers")
 
-
-
+game = Battleships_game(board_size=board_size, number_of_ships=4)
+game.start_game()
