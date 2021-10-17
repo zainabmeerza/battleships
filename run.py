@@ -22,3 +22,22 @@ def validate_coordinates(x, y, grid_size):
     
     return False
 
+
+class Board_game:
+    """
+    Class for the main board. This will set the size of the board,
+    number of ships, and the player's name. Includes the methods
+    for adding the ships to the board, retrieving the player guesses,
+    and printing the board.
+    """
+
+    def __init__(self, board_size, number_of_ships, user_name, player =False):
+        self.board_size = board_size
+        self.number_of_ships = number_of_ships
+        self.user_name = user_name
+        self.player = player
+        self.battleships = []
+        self.guesses = []
+        self.place_ships()
+
+        
