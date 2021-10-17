@@ -65,7 +65,19 @@ class Board_game:
         else:
             return False
 
-            
+    
+    def guessed_already(self, x, y):
+        """
+        Function that checks if the coordinated
+        guessed has already been guessed before.
+        """
+        if (x, y) in self.guesses:
+            return True
+        return False
+
+    
+    
+
 
 
 
