@@ -36,7 +36,7 @@ class Board_game:
         self.number_of_ships = number_of_ships
         self.user_name = user_name
         self.player = player
-        self.battleships = []
+        self.battle_ship = []
         self.guesses = []
         self.place_ships()
 
@@ -49,5 +49,23 @@ class Board_game:
         print(f"This is {self.user_name}'s Board:")
         for row in self.board_size:
             print(" ".join(row))
+
+
+    def guess(self, x, y):
+        """
+        This function makes a guess and 
+        marks the guess on the board.
+        """
+        self.guesses.append((x, y))
+        self.game_board[x][y] = "X"
+
+        if (x, y) in self.battle_ship:
+            self.game_board[x][y] = "*"
+            return True
+        else:
+            return False
+
+            
+
 
 
