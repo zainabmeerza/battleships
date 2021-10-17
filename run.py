@@ -120,7 +120,75 @@ class Battleships_game:
         self.player_board = temporary_board
 
         self.play_game()
+
+    def play_game(self):
+        """
+        The main game loop that processes the guess and exits the game
+        once it is complete or quits upon request by user playing.
+        """
+
+        while True:
+            self.print_board()
+            if self.game_over():
+                if (self.scores['player']) > (self.scores['computer']):
+                    print("                                    _          _ ")
+                    print("                                   (_)        | |")
+                    print(" _   _   ___   _   _     __      __ _  _ __   | |")
+                    print("| | | | / _ \ | | | |    \ \ /\ / /| || '_ \  | |")
+                    print("| |_| || (_) || |_| |     \ V  V / | || | | | |_|")
+                    print(" \__, | \___/  \__,_|      \_/\_/  |_||_| |_| (_)")
+                    print("  __/ |                                          ")
+                    print(" |___/                                         \n")
+
+                elif (self.scores['player']) == (self.scores['computer']):
+                    print("                          _                     _ ")
+                    print("                         | |                   | |")
+                    print(" _   _   ___   _   _     | |  ___   ___   ___  | |")
+                    print("| | | | / _ \ | | | |    | | / _ \ / __| / _ \ | |")
+                    print("| |_| || (_) || |_| |    | || (_) |\__ \|  __/ |_|")
+                    print(" \__, | \___/  \__,_|    |_| \___/ |___/ \___| (_)")
+                    print("  __/ |                                           ")
+                    print(" |___/                                          \n")
+
+                else:
+                    print(" _  _   _                       _                        _ ")
+                    print("(_)| | ( )                     | |                      | |")
+                    print(" _ | |_|/ ___      __ _      __| | _ __  __ _ __      __| |")
+                    print("| || __| / __|    / _` |    / _` || '__|/ _` |\ \ /\ / /| |")
+                    print("| || |_  \__ \   | (_| |   | (_| || |  | (_| | \ V  V / |_|")
+                    print("|_| \__| |___/    \__,_|    \__,_||_|   \__,_|  \_/\_/  (_) \n")
+                
+                
+                print(" ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗    ")
+                print(" █╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗   ")
+                print(" █║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝   ")
+                print(" █║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ")
+                print(" ██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║██╗")
+                print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝\n")
         
+                break
+
+            # PLAYER TAKES A GUESS
+            x, y = self.play_guess()
+            while not self.guess_valid(x, y):
+                x, y = self.play_guess()
+            hit_player = self.computer_board.guess(x, y)
+
+            # COMPUTER MAKES A GUESS
+            x, y = random_coordinates(self.board_size)
+            while self.player_board.guessed_already(x, y):
+                x, y = random_coordinates(self.board_size)
+            hit_computer = self.player_board.guess(x, y)
+
+            # END OF A GAME ROUND
+            self.round_score(hit_player, hit_computer)
+            user_choice = input("Type \"quit\" to quit the game or any key " +
+                           "to continue.\n")
+            if user_choice == "quit":
+                break
+
+
+
 
 
 
