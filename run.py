@@ -31,7 +31,7 @@ class Board_game:
     and printing the board.
     """
 
-    def __init__(self, board_size, number_of_ships, user_name, player =False):
+    def __init__(self, board_size, number_of_ships, user_name, player=False):
         self.board_size = board_size
         self.number_of_ships = number_of_ships
         self.user_name = user_name
@@ -40,21 +40,19 @@ class Board_game:
         self.guesses = []
         self.place_ships()
 
-
     def print_board(self):
         """
-        Function that will print the state of the board
+        Prints the state of the board
         as it updates after each player turn.
         """
         print(f"This is {self.user_name}'s Board:")
         for row in self.board_size:
             print(" ".join(row))
 
-
     def guess(self, x, y):
         """
-        This function makes a guess and 
-        marks the guess on the board.
+        This will make a guess and will
+        mark the guess on the board.
         """
         self.guesses.append((x, y))
         self.game_board[x][y] = "X"
@@ -64,19 +62,41 @@ class Board_game:
             return True
         else:
             return False
-
     
     def guessed_already(self, x, y):
         """
-        Function that checks if the coordinated
+        This checks if the coordinated
         guessed has already been guessed before.
         """
         if (x, y) in self.guesses:
             return True
         return False
 
+    def previous_guess(self):
+        """
+        This will return the coordinates of the previous
+        most recent guess that was made on the board.
+        """
+        return self.guesses[-1]
+
+    def place_ships(self):
+        """
+        Places the battleships on the game board.
+        """
+        game_board = [["." for x in range(self.board_size)] for y in range(self.board_size)]
+        self.game_board = game_board
+        for _ in range(self.number_of_ships):
+            x, y = random_coordinates(self.board_size)
+            while (x, y) in self.number_of_ships:
+                x, y = random_coordinates(self.board_size)
+            self.battle_ship.append((x, y))
+            if self.player:
+                self.game_board[x][y] = "@"
+
+
+class Battleships_game:
     
-    
+
 
 
 
