@@ -107,7 +107,20 @@ class Battleships_game:
         self.scores = {"computer": 0, "player": 0}
 
     def start_game(self):
-    
+        """
+        Displays the welcome screen, initialises the 
+        game boards, and proceeds to start the game.
+        """
+        self.display_info()
+        temporary_board = Board_game(self.board_size, self.number_of_ships, "Computer", player=False)
+        self.computer_board = temporary_board
+        player_name = input("Please enter your name:\n")
+        print("-"* 150)
+        temporary_board = Board_game(self.board_size, self.number_of_ships, player_name, player=True)
+        self.player_board = temporary_board
+
+        self.play_game()
+        
 
 
 
