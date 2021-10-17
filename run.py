@@ -45,9 +45,10 @@ class Board_game:
         Prints the state of the board
         as it updates after each player turn.
         """
-        print(f"This is {self.user_name}'s Board:")
+        print(f"This is {self.user_name}'s Board:\n")
         for row in self.board_size:
             print(" ".join(row))
+        print("\n")
 
     def guess(self, x, y):
         """
@@ -95,6 +96,17 @@ class Board_game:
 
 
 class Battleships_game:
+    """
+    Class that initialises the game, and sets up game parameters
+    and the player boards.
+    """
+
+    def __init__(self, board_size, number_of_ships):
+        self.board_size = board_size
+        self.number_of_ships = number_of_ships
+        self.scores = {"computer": 0, "player": 0}
+
+    def start_game(self):
     
 
 
