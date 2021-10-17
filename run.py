@@ -40,4 +40,14 @@ class Board_game:
         self.guesses = []
         self.place_ships()
 
-        
+
+    def print_board(self):
+        """
+        Function that will print the state of the board
+        as it updates after each player turn.
+        """
+        print(f"This is {self.user_name}'s Board:")
+        for row in self.board_size:
+            print(" ".join(row))
+
+
