@@ -260,6 +260,23 @@ class Battleships_game:
               f"{self.scores['player']} VS. Computer: {self.scores['computer']}")
         print("-" * 150)
 
+    def display_info(self):
+        """
+        Displays welcome message and information about the board
+        """
+        print("-" * 150)
+        print("WELCOME TO A GAME OF BATTLESHIPS\n")
+        print(f"Board Size: {self.board_size} x {self.board_size}.\n"
+              "Number of ships: {self.number_of_ships} \n")
+        print("GAME INSTRUCTIONS:\n")
+        print("Guess the ship coordinates of your opponent.\n"
+              "Aim to HIT all the oponenets ships.\nEnter a"
+              "row number and column number to guess the coordinates.")
+        print("The top left corner is row: 0 and column: 0\n")
+        print("--------------------- LEGEND -------------------------\n")
+        print("(@) = a ship on the battlefield\n(*) = coordinates guessed are a HIT!\n(X) = coordinates guessed are a MISS!\n")
+        print("-" * 150)
+
 
 
 
