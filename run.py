@@ -8,7 +8,6 @@ def random_coordinates(grid_size):
     """
     x = randint(0, grid_size - 1)
     y = randint(0, grid_size - 1)
-
     return (x, y)
 
 
@@ -19,7 +18,6 @@ def validate_coordinates(x, y, grid_size):
     """
     if 0 <= x < grid_size and 0 <= y < grid_size:
         return True
-    
     return False
 
 
@@ -57,13 +55,12 @@ class Board_game:
         """
         self.guesses.append((x, y))
         self.game_board[x][y] = "X"
-
         if (x, y) in self.battle_ship:
             self.game_board[x][y] = "*"
             return True
         else:
             return False
-    
+
     def guessed_already(self, x, y):
         """
         This checks if the coordinated
@@ -112,7 +109,8 @@ class Battleships_game:
         game boards, and proceeds to start the game.
         """
         self.display_info()
-        temporary_board = Board_game(self.board_size, self.number_of_ships, "Computer", player=False)
+        temporary_board = Board_game(self.board_size, self.number_of_ships,
+                                     "Computer", player=False)
         self.computer_board = temporary_board
         player_name = input("Please enter your name: ")
         print("-" * 150)
@@ -150,7 +148,6 @@ class Battleships_game:
                     print(" \__, | \___/  \__,_|    |_| \___/ |___/ \___| (_)")
                     print("  __/ |                                           ")
                     print(" |___/                                          \n")
-
                 else:
                     print(" _  _   _                       _                        _ ")
                     print("(_)| | ( )                     | |                      | |")
@@ -158,18 +155,15 @@ class Battleships_game:
                     print("| || __| / __|    / _` |    / _` || '__|/ _` |\ \ /\ / /| |")
                     print("| || |_  \__ \   | (_| |   | (_| || |  | (_| | \ V  V / |_|")
                     print("|_| \__| |___/    \__,_|    \__,_||_|   \__,_|  \_/\_/  (_) \n")
-                
-                
                 print(" ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗    ")
                 print(" █╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗   ")
                 print(" █║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝   ")
                 print(" █║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ")
                 print(" ██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║██╗")
                 print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝\n")
-
                 print(f"{self.player_board.user_name}: " +
-                      f"{self.scores['player']} VS. Computer: {self.scores['computer']}")
-        
+                      f"{self.scores['player']} VS. Computer:"
+                      + f"{self.scores['computer']}")
                 break
 
             # PLAYER TAKES A GUESS
@@ -220,21 +214,21 @@ class Battleships_game:
     def guess_valid(self, x, y):
         """
         Checks if the coordinates given are within the range of
-        the board size, and if the coordinates have been
-        repeated.   
+        the board size, and if the coordinates have been repeated.   
         """
         if not validate_coordinates(x, y, self.board_size):
-            print(f"Row and column must be a value between 0 and {self.board_size - 1}")
+            print("Row and column must be a value between"
+                  + f"0 and {self.board_size - 1}")
             return False
         if self.computer_board.guessed_already(x, y):
             print("You cannot guess the same coordinates more than once.")
             return False
-
         return True
 
     def game_over(self):
         """
-        This will check if either player has sunk the other player's battleships
+        This will check if either player has sunk the
+        other player's battleships
         """
         if self.scores["player"] >= self.number_of_ships or \
            self.scores["computer"] >= self.number_of_ships:
@@ -261,7 +255,8 @@ class Battleships_game:
             print("That was a \033[1mMISS!\033[0m \n")
         print("The current scores are:")
         print(f"{self.player_board.user_name}: " +
-              f"{self.scores['player']} VS. Computer: {self.scores['computer']}")
+              f"{self.scores['player']} VS. Computer: "
+              + f"{self.scores['computer']}")
         print("-" * 150)
 
     def display_info(self):
@@ -278,7 +273,7 @@ class Battleships_game:
               "row number and column number to guess the coordinates.")
         print("The top left corner is row: 0 and column: 0\n")
         print("--------------------- LEGEND -------------------------\n")
-        print("(@) = a ship on the battlefield\n(*) = coordinates guessed are" 
+        print("(@) = a ship on the battlefield\n(*) = coordinates guessed are"
               + "a HIT!\n(X) = coordinates guessed are a MISS!\n")
         print("-" * 150)
 
@@ -286,7 +281,6 @@ class Battleships_game:
 # ASK THE USER WHAT GRID SIZE THEY WOULD LIKE TO PLAY ON
 # THEN STARTS A NEW GAME
 while True:
- 
     print("\n")
     print("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ███████╗██╗  ██╗██╗██████╗ ███████╗ ")
     print("██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔════╝██║  ██║██║██╔══██╗██╔════╝")
@@ -294,11 +288,11 @@ while True:
     print("██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ╚════██║██╔══██║██║██╔═══╝ ╚════██║")
     print("██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ███████║██║  ██║██║██║     ███████║")
     print("╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝\n")
-
+    
     board_size = input("What grid size do you want to use? ")
-
-    print("                                       _                _    _                        ")
-    print("                                      | |              | |  (_)                       ")
+    
+    print("                                       _                _    _ ")
+    print("                                      | |              | |  (_)")
     print("  __ _   __ _  _ __ ___    ___    ___ | |_  __ _  _ __ | |_  _  _ __    __ _          ")
     print(" / _` | / _` || '_ ` _ \  / _ \  / __|| __|/ _` || '__|| __|| || '_ \  / _` |         ")
     print("| (_| || (_| || | | | | ||  __/  \__ \| |_| (_| || |   | |_ | || | | || (_| | _  _  _ ")
@@ -306,7 +300,7 @@ while True:
     print("  __/ |                                                                 __/ |         ")
     print(" |___/                                                                 |___/          ")
     print("\n")
-
+    
     try:
         board_size = int(board_size)
         break
