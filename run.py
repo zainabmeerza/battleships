@@ -206,13 +206,59 @@ class Battleships_game:
 
         return (x, y)
 
-
     def print_board(self):
         """
         Print the current board status on the screen
         """
         self.player_board.print()
         self.computer_board.print()
+
+    def guess_valid(self, x, y):
+        """
+        Checks if the coordinates given are within the range of
+        the board size, and if the coordinates have been
+        repeated.   
+        """
+        if not validate_coordinates(x, y, self.board_size):
+            print(f"Row and column must be a value between 0 and {self.board_size - 1}")
+            return False
+        if self.computer_board.guessed_already(x, y)(x, y):
+            print("You cannot guess the same coordinates more than once.")
+            return False
+
+        return True
+
+    def game_over(self):
+        """
+        This will check if either player has sunk the other player's battleships
+        """
+        if self.scores["player"] >= self.number_of_ships or \
+           self.scores["computer"] >= self.number_of_ships:
+            return True
+        return False
+
+    def round_score(self, hit_player, hit_computer):
+        """
+        This will output the updated scores after each round
+        """
+        print("-" * 150)
+        print(f"{self.player_board.username} guessed " +
+              f"{self.computer_board.previous_guess()}")
+        if hit_player:
+            self.scores["player"] += 1
+            print("That was a \033[1mHIT!\033[0m \n")
+        else:
+            print("That was a \033[1mMISS!\033[0m \n")
+        print(f"Computer guessed {self.player_board.previous_guess()}")
+        if hit_computer:
+            self.scores["computer"] += 1
+            print("That was a \033[1mHIT!\033[0m \n")
+        else:
+            print("That was a \033[1mMISS!\033[0m \n")
+        print("The current scores are:")
+        print(f"{self.player_board.username}: " +
+              f"{self.scores['player']} VS. Computer: {self.scores['computer']}")
+        print("-" * 150)
 
 
 
