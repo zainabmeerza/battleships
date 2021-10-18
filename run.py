@@ -231,7 +231,7 @@ class Battleships_game:
         the board size, and if the coordinates have been repeated.
         """
         if not validate_coordinates(x, y, self.board_size):
-            print("Row and column must be a value between" +
+            print("Row and column must be a value between " +
                   f"0 and {self.board_size - 1}")
             return False
         if self.computer_board.guessed_already(x, y):
