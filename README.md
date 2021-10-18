@@ -10,7 +10,7 @@ Command-line application using python.</h2>
 
 <a href="https://battleships-milestone-3.herokuapp.com/" target="_blank" >View the live website on Heroku.</a>
 
-<img src="assets/readmeimages/am-i-responsive.png" height="350px" width="600px" alt="screenshot of the responsiveness of the website" >
+<img src="readmeimages/am-i-responsive.png" height="350px" width="600px" alt="screenshot of the responsiveness of the website" >
 
 <p>This image is produced using the tool from <a href="http://ami.responsivedesign.is/#" target="_blank">Am I Responsive</a></p>
 
@@ -46,16 +46,14 @@ T
 
 
 <h1><strong>Technologies Used</strong></h1>
-This project is based on HTML and CSS programming languages. Several technologies and tools were used to enable a functional design. These are listed below.
+This project is based on Python programming language. The technologies and tools that were used are listed below.
 <ul>
-<li><a href="https://www.gitpod.io/" target="_blank">GitPod</a> - Was the development environment used to write the code and build the project. </li>
-<li><a href="https://github.com/" target="_blank">GitHub</a> - Was the platform used to hose the code that was written and pushed from GitPod. </li>
+<li><a href="https://www.gitpod.io/" target="_blank">GitPod</a> - Was the development environment used to write the code and build the project. Git commands were used to commit and push the code from gitpod to github. </li>
+<li><a href="https://github.com/" target="_blank">GitHub</a> - Was the platform used to host the code that was written and pushed from GitPod into a repository. </li>
 <li><a href="http://ami.responsivedesign.is/" target="_blank">Am I Responsive</a> - Was used to generate a repsonive image; displaying how the website would look on different devices. </li>
-
-Gitpod I used this developer to write the code for this game.
-Github Was used to host my repository and readme.
-HerokuTo host my app and deploy here.
-pep8online.com To validate my code and check for errors
+<li><a href="https://heroku.com/" target="_blank">Heroku</a> - Was used to deploy and host the project live in the cloud. </li>
+<li><a href="http://pep8online.com/" target="_blank">pep8online</a> - Was used as a tool to validate the code and check for any errors and warnings within the code.</li>
+<li><a href="https://docs.python.org/3/library/" target="_blank">Python Library (random)</a> - random.randint library was  used to generate random integer numbers for the opponent's (computer) coordinates in the battleships game. </li>
 </ul>
 
 <h1><strong>Testing</strong></h1>
