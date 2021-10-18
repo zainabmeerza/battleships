@@ -20,7 +20,7 @@ Hence the aim of the game is for players to call shots and make guesses at which
 
 <h1><strong>Owner Stories</strong></h1>
 <ol>
-<li>As the owner, I want the game to be a function short fun game for users to interact with. </li>
+<li>As the owner, I want the game to be a functional short fun game for users to interact with. </li>
 <li>As the owner, I would like to make the game look appealing to the user.</li>
 </ol>
 <h1><strong>User Stories</strong></h1>
