@@ -18,8 +18,6 @@ Command-line application using python.</h2>
 Hence the aim of the game is for players to call shots and make guesses at which coordinates the other player's ships are placed. The final objective is to destroy all the opponent's battleships. This game is designed as a single player game against a computer. The player has the choice of selecting the grid size that they would like. 
  </p>
 
-<h3><strong>The business goals of this website are the following:</strong></h3>
-
 <h1><strong>Owner Stories</strong></h1>
 <ol>
 <li>As the owner, I want the game to be a function short fun game for users to interact with. </li>
