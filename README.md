@@ -29,7 +29,7 @@ Hence the aim of the game is for players to call shots and make guesses at which
 <li>As a new player, I would like some information on how to play the game.</li>
 <li>As a new player, I would like some details as to what the symbols on the game board means.</li>
 <li>As a player, I would like the option to quit the game at any stage.</li>
-<li>As a New player, I would like the game too be clear and easy to navigate through.</li>
+<li>As a New player, I would like the game to be clear and easy to navigate through.</li>
 </ol>
 
 <h2><strong>Skeleton</strong></h2>
@@ -77,21 +77,40 @@ This project is based on Python programming language. The technologies and tools
 <ol>
 <li>As a player, I would like the option to select the size of the board game grid.</li>
 <br>
+<ul>
+<li>The landing page of the game includes a title banner, and below the game asks the user
+to input the grid size of their choice. The game does not proceed until it recieves a valid integer input from the user.</li>
+</ul>
+<br>
 <img src="readmeimages/initial-screen.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 <br>
 <br>
 <li>As a new player, I would like some information on how to play the game.</li>
 <br>
 <li>As a new player, I would like some details as to what the symbols on the game board means.</li>
+<br>
+<ul>
+<li>Before the game officially begins a set of instructions are displayed to let the user know the game parameters (board size, number of ships) and instructions on how to play the game.</li>
+<li> Underneath the instructions, a legend/key is displayed that shows what each symbol on the board game represents</li>
+</ul>
+<br>
 <img src="readmeimages/instructions.png" alt="screenshot of the instructions and legend listed on the game" >
 <br>
 <br>
 <li>As a player, I would like the option to quit the game at any stage.</li>
 <br>
+<ul>
+<li>Between each round, the game asks the user whether they would like to continue to the next round or quit the game. The game does not proceed until it recieves an input from the user. If the input is 'quit' the game will terminate. If the user does not wish to exit, then they will still have to press any key to continue onto the next round.</li>
+</ul>
+<br>
 <img src="readmeimages/quit.png" alt="screenshot of the quit game feature" >
 <br>
 <br>
-<li>As a New player, I would like the game too be clear and easy to navigate through.</li>
+<li>As a New player, I would like the game to be clear and easy to navigate through.</li>
+<br>
+<ul>
+<li>The overall layout of the game is neatly structured and labelled. Both gameboards are labelled to differentiate between the player and computer. There also is dashed lines to seperate the user entering their guess, and the result of their guess.</li>
+</ul>
 <br>
 <img src="readmeimages/overall-layout.png" alt="screenshot of the overall layout of the game" >
 <br>
