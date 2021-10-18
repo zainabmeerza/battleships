@@ -49,7 +49,6 @@ Some features that I would like to include in future releases are the following:
 <li>Give the user the control to place their ships on their grid themselves.</li>
 <li>Multiplayer Mode; Player Vs Player rather than Player Vs Computer</li>
 </ul>
-<br>
 
 <h1><strong>Technologies Used</strong></h1>
 This project is based on Python programming language. The technologies and tools that were used are listed below.
@@ -82,7 +81,7 @@ This project is based on Python programming language. The technologies and tools
 <br>
 <li>As a New player, I would like the game too be clear and easy to navigate through.</li>
 <br>
-<img src="readmeimages/overall-layout" alt="screenshot of the overall layout of the game" >
+<img src="readmeimages/overall-layout.png" alt="screenshot of the overall layout of the game" >
 <br>
 <br>
 </ol>
