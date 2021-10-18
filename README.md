@@ -39,13 +39,29 @@ include flowchart if u have time
 
 <h1><strong>Features</strong></h1>
 
-
+<li>At the start of the game, it requests for the user to input their name. It then uses the player's name to distinguis between the player's board and computer's board. It also uses the name to display the scores.</li>
+<br>
 <img src="readmeimages/username.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
-<img src="readmeimages/score.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
-<img src="readmeimages/repeat-guess.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
-<img src="readmeimages/input-guesses.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size">
+<br>
+<li>The two gameboards are displayed after each round. Each board is labelled to identify which player it belongs to. The user's ships are also displayed (as @) so the user is aware of where their ships have been randomly placed on their board. The placement of the computer's ships are hidden from the user.</li>
+<br>
 <img src="readmeimages/gameboards.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
-<img src="readmeimages/guess-check.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<br>
+<li>The game asks tthe user to input the pair of coordinates sepeartley. It first asks for a row, and then column. As part of the in game validation, only numbers are accepted as an input.</li>
+<br>
+<img src="readmeimages/guess.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<br>
+<li>As a validation check, the coordinates enetered by the user at each round is checked to make sure it is not a coordinate that has been previously entered and is being repeated. If this is the case, a message is displayed, and the user is again asked to input another pair of coordinates. This ensures that the user is not allowed to guess the same coordinates twice.</li>
+<br>
+<img src="readmeimages/repeat-guess.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<br>
+<li>As another validation check, the coordinates enetered by the user at each round is also checked to make sure that it is valid within the range and size of the game board itself. This ensures that any coordinates guessed that are outside the grid size is not accepted. If this is not the case, a message is displayed to inform the user of the range of values they are able to guess from.</li>
+<br>
+<img src="readmeimages/input-guesses.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size">
+<br>
+<li>After each guess is entered, It displays what each game player has chosen as their guess for that round, and if it was a HIT or a MISS. It then outputs a tally of the current updated scores.</li>
+<br>
+<img src="readmeimages/score.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 
 <li>For aesthetic purposes when the game ends, a banner made up of ASCII codes are used to let the user know if they have won, lost or if it was a draw. It is then followed by GAME OVER to let the user know they have reached the end of the game. Below this, the final scores of the game are displayed to the user again.
 
