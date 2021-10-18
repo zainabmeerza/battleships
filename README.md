@@ -69,7 +69,7 @@ Hence the aim of the game is for players to call shots and make guesses at which
 For this application, two classes were created; Board_game, and Battleships_game.
 
 <ul>
-    <li><h2>Class: Board_game</h2></li>
+    <li><h3>Class: Board_game</h3></li>
     <ul>
         <li> self.board_size - is to set the size of the game's grid. </li>
         <li> self.number_of_ships - is to set the number of ships used. </li>
@@ -78,7 +78,7 @@ For this application, two classes were created; Board_game, and Battleships_game
         <li> self.guesses - is an array that stores a list of the previous guesses. </li>
         <li> self.place_ships() - is a function that builds an in-memory game grid with the player's ships placed.</li>
     </ul>
-     <li><h2>Class: Battleships_game</h2></li>
+     <li><h3>Class: Battleships_game</h3></li>
     <ul>
         <li>self.board_size - used to set the size of the grid.</li>
         <li>>self.number_of_ships - is to set the number of ships used.</li>
