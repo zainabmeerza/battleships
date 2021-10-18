@@ -113,7 +113,7 @@ class Battleships_game:
                                      "Computer", player=False)
         self.computer_board = temporary_board
         player_name = input("Please enter your name: \n")
-        print("-" * 150)
+        print("-" * 60)
         temporary_board = Board_game(self.board_size, self.number_of_ships,
                                      player_name, player=True)
         self.player_board = temporary_board
@@ -193,7 +193,7 @@ class Battleships_game:
         """
         while True:
             try:
-                print("-" * 150)
+                print("-" * 60)
                 x = input("Guess a row: \n")
                 x = int(x)
                 y = input("Guess a column: \n")
@@ -239,7 +239,7 @@ class Battleships_game:
         """
         This will output the updated scores after each round
         """
-        print("-" * 150)
+        print("-" * 60)
         print(f"{self.player_board.user_name} guessed " +
               f"{self.computer_board.previous_guess()}")
         if hit_player:
@@ -263,7 +263,7 @@ class Battleships_game:
         """
         Displays welcome message and information about the board
         """
-        print("-" * 150)
+        print("-" * 60)
         print("WELCOME TO A GAME OF BATTLESHIPS\n")
         print(f"Board Size: {self.board_size} x {self.board_size}.\n"
               f"Number of ships: {self.number_of_ships} \n")
@@ -275,7 +275,7 @@ class Battleships_game:
         print("--------------------- LEGEND -------------------------\n")
         print("(@) = a ship on the battlefield\n(*) = coordinates guessed are"
               + "a HIT!\n(X) = coordinates guessed are a MISS!\n")
-        print("-" * 150)
+        print("-" * 60)
 
 
 # ASK THE USER WHAT GRID SIZE THEY WOULD LIKE TO PLAY ON
