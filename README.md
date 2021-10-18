@@ -14,36 +14,44 @@ Command-line application using python.</h2>
 
 <p>This image is produced using the tool from <a href="http://ami.responsivedesign.is/#" target="_blank">Am I Responsive</a></p>
 
-<p>This website is created to provide students and teachers with educational resources that may help them for revision, class learning activities or even homework. It can be useful to any user who has an interest in learning about electronics and electrical circuits as a hobby. It provides them with a variety of quizzes, of different difficulties that cover a range of different topics. 
+<p>This battleships application is a terminal based logical game. It is a widely known game played on grids where each player's ships are marked on the grid. The coordinates at which these ships are placed are conceled from the other player.
+Hence the aim of the game is for players to call shots and make guesses at which coordinates the other player's ships are placed. The final objective is to destroy all the opponent's battleships. This game is designed as a single player game against a computer. The player has the choice of selecting the grid size that they would like. 
  </p>
 
-T
 <h3><strong>The business goals of this website are the following:</strong></h3>
 
-<h1><strong>UX</strong></h1>
-
-<h2><strong>Strategy</strong></h2>
-
-
-<h2><strong>Scope</strong></h2>
-
-
-<h2><strong>Structure</strong></h2>
-
+<h1><strong>Owner Stories</strong></h1>
+<ol>
+<li>As the owner, I want the game to be a function short fun game for users to interact with. </li>
+<li>As the owner, I would like to make the game look appealing to the user.</li>
+</ol>
+<h1><strong>User Stories</strong></h1>
+<ol>
+<li>As a player, I would like the option to select the size of the board game grid.</li>
+<li>As a new player, I would like some information on how to play the game.</li>
+<li>As a new player, I would like some details as to what the symbols on the game board means.</li>
+<li>As a player, I would like the option to quit the game at any stage.</li>
+<li>As a New player, I would like the game too be clear and easy to navigate through.</li>
+</ol>
 
 <h2><strong>Skeleton</strong></h2>
 
-
-
-<h2><strong>Surface</strong></h2>
-
+include flowchart if u have time
 
 
 <h1><strong>Features</strong></h1>
 
 
 <h1><strong>Features to Implement in the future:</strong></h1>
+Some features that I would like to include in future releases are the following:
+<ul>
 
+<li>Add the option to save score and keep a record of past scores of previous games.</li>
+<li>Allow the user to select the number of ships for the game.</li>
+<li>Give the user the control to place their ships on their grid themselves.</li>
+<li>Multiplayer Mode; Player Vs Player rather than Player Vs Computer</li>
+</ul>
+<br>
 
 <h1><strong>Technologies Used</strong></h1>
 This project is based on Python programming language. The technologies and tools that were used are listed below.
@@ -57,11 +65,36 @@ This project is based on Python programming language. The technologies and tools
 </ul>
 
 <h1><strong>Testing</strong></h1>
+<ol>
+<li>As a player, I would like the option to select the size of the board game grid.</li>
+<br>
+<img src="readmeimages/initial-screen.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<br>
+<br>
+<li>As a new player, I would like some information on how to play the game.</li>
+<br>
+<li>As a new player, I would like some details as to what the symbols on the game board means.</li>
+<img src="readmeimages/instructions.png" alt="screenshot of the instructions and legend listed on the game" >
+<br>
+<br>
+<li>As a player, I would like the option to quit the game at any stage.</li>
+<br>
+<img src="readmeimages/quit.png" alt="screenshot of the quit game feature" >
+<br>
+<br>
+<li>As a New player, I would like the game too be clear and easy to navigate through.</li>
+<br>
+<img src="readmeimages/overall-layout" alt="screenshot of the overall layout of the game" >
+<br>
+<br>
+</ol>
+
 <h2>PEP8 Code Validator Test</h2>
 The code was passed into the following Python code validator tool <a href="http://pep8online.com/" target="_blank">PEP8 Online</a> The results obtained are shown iin the screenshot below. No errors or warnings were found in the code.
 <br>
 <br>
 <img src="readmeimages/PEP8test.png" alt="screenshot of the results from the PEP8 online Python code validator" >
+<br>
 <br>
 <h1><strong>Deployment</strong></h1>
 This project was deployed using the code institute mock terminal along with Heroku. Throughout the project, 
