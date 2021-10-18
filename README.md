@@ -69,9 +69,16 @@ the code was commited to git and pushed onto GitHub using git commands.
 The following steps were carried out in order to deploy this project to Heroku from its GitHub repository:
 <ol>
 <li>On the Heroku dashboard, 'Create a new app' was selected. </li>
-<li>The app name was entered, and the region was selected as Europe.<li>
+<li>The app name was entered, and the region was selected as Europe.</li>
 <li>Once the app has been created, the setting tab was selected.</li>
 <li>In the settings, the 'Buildpacks' were set by selected 'Python" first, followed by 'Node.js'.
+<li>Scrolling down in the settings, a <em>Config Var</em> was added with the key set to <strong>PORT</strong> and the value is <strong>8000</strong></li>
+<li>Next, the Deploy menu was selected, and GitHub was chosen as the "Deployment method"</li>
+<li>'Connect too Github' was selected, and the repository name was searched and chosen. 'Connect' was then clicked to link the Github project repositry code to the Heroku app.</li>
+<li>Scrolling down, 'Enable Automatic Deploys" was chosen, and the 'Deploy Branch' was selected.</li>
+<li>After waiting a few moments for the app to build, a 'view app' button appeared which takes you to the deployed app</li>
+
+<a href="https://battleships-milestone-3.herokuapp.com/" target="_blank" >View the live deployed website on Heroku.</a>
 
 </ol>
 <h2>Clone the website -</h2>
