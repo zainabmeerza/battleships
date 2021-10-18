@@ -57,8 +57,12 @@ This project is based on Python programming language. The technologies and tools
 </ul>
 
 <h1><strong>Testing</strong></h1>
-
-
+<h2>PEP8 Code Validator Test</h2>
+The code was passed into the following Python code validator tool <a href="http://pep8online.com/" target="_blank">PEP8 Online</a> The results obtained are shown iin the screenshot below. No errors or warnings were found in the code.
+<br>
+<br>
+<img src="readmeimages/PEP8test.png" alt="screenshot of the results from the PEP8 online Python code validator" >
+<br>
 <h1><strong>Deployment</strong></h1>
 This project was deployed using the code institute mock terminal along with Heroku. Throughout the project, 
 the code was commited to git and pushed onto GitHub using git commands.
