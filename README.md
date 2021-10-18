@@ -38,9 +38,7 @@ include flowchart if u have time
 
 
 <h1><strong>Features</strong></h1>
-<img src="readmeimages/draw.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
-<img src="readmeimages/you-win.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
-<img src="readmeimages/you-lose.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+
 
 <img src="readmeimages/username.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 <img src="readmeimages/score.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
@@ -49,6 +47,12 @@ include flowchart if u have time
 <img src="readmeimages/gameboards.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 <img src="readmeimages/guess-check.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 
+<li>For aesthetic purposes when the game ends, a banner made up of ASCII codes are used to let the user know if they have won, lost or if it was a draw. It is then followed by GAME OVER to let the user know they have reached the end of the game. Below this, the final scores of the game are displayed to the user again.
+
+<br>
+<img src="readmeimages/draw.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/you-win.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/you-lose.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 
 
 <h1><strong>Features to Implement in the future:</strong></h1>
