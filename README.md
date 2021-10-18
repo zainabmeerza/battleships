@@ -4,7 +4,7 @@
 Command-line application using python.</h2>
 
 <p>
-    The aim of the third project was to build a command-line application using python, that takes in
+    The aim of the third project was to build a command-line application using python, that takes in an
     input from the user and processes it. This website is made for educational purposes only. 
 </p>
 
