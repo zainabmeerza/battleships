@@ -112,7 +112,7 @@ class Battleships_game:
         temporary_board = Board_game(self.board_size, self.number_of_ships,
                                      "Computer", player=False)
         self.computer_board = temporary_board
-        player_name = input("Please enter your name: ")
+        player_name = input("Please enter your name: \n")
         print("-" * 150)
         temporary_board = Board_game(self.board_size, self.number_of_ships,
                                      player_name, player=True)
@@ -181,7 +181,7 @@ class Battleships_game:
             # END OF A GAME ROUND
             self.round_score(hit_player, hit_computer)
             user_choice = input("Type \"quit\" to quit the game or any key " +
-                                "to continue.\n")
+                                "to continue. \n")
             if user_choice == "quit":
                 break
 
@@ -194,9 +194,9 @@ class Battleships_game:
         while True:
             try:
                 print("-" * 150)
-                x = input("Guess a row: ")
+                x = input("Guess a row: \n")
                 x = int(x)
-                y = input("Guess a column: ")
+                y = input("Guess a column: \n")
                 y = int(y)
                 break
             except ValueError:
@@ -289,7 +289,7 @@ while True:
     print("██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ███████║██║  ██║██║██║     ███████║")
     print("╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝\n")
     
-    board_size = input("What grid size do you want to use? ")
+    board_size = input("What grid size do you want to use? \n")
     
     print("                                       _                _    _ ")
     print("                                      | |              | |  (_)")
