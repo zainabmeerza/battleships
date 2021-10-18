@@ -32,11 +32,6 @@ Hence the aim of the game is for players to call shots and make guesses at which
 <li>As a New player, I would like the game to be clear and easy to navigate through.</li>
 </ol>
 
-<h2><strong>Skeleton</strong></h2>
-
-include flowchart if u have time
-
-
 <h1><strong>Features</strong></h1>
 
 <li>At the start of the game, it requests for the user to input their name. It then uses the player's name to distinguis between the player's board and computer's board. It also uses the name to display the scores.</li>
@@ -70,6 +65,26 @@ include flowchart if u have time
 <img src="readmeimages/you-win.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 <img src="readmeimages/you-lose.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
 
+<h1><strong>The Data Model of the Code:</strong></h1>
+For this application, two classes were created; Board_game, and Battleships_game.
+
+<ul>
+    <li><h2>Class: Board_game</h2></li>
+    <ul>
+        <li> self.board_size - is to set the size of the game's grid. </li>
+        <li> self.number_of_ships - is to set the number of ships used. </li>
+        <li> self.user_name - is to store the name of the player.</li>
+        <li> self.player - is a boolean indicator that is used to differentiate between a human player and a computer player. </li>
+        <li> self.guesses - is an array that stores a list of the previous guesses. </li>
+        <li> self.place_ships() - is a function that builds an in-memory game grid with the player's ships placed.</li>
+    </ul>
+     <li><h2>Class: Battleships_game</h2></li>
+    <ul>
+        <li>self.board_size - used to set the size of the grid.</li>
+        <li>>self.number_of_ships - is to set the number of ships used.</li>
+        <li>self.scores - is used to keep a tally of the scores each time a ship has been hit.</li>
+    </ul>
+</ul>
 
 <h1><strong>Features to Implement in the future:</strong></h1>
 Some features that I would like to include in future releases are the following:
