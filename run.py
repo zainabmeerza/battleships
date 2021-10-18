@@ -81,7 +81,8 @@ class Board_game:
         """
         Places the battleships on the game board.
         """
-        game_board = [["." for x in range(self.board_size)] for y in range(self.board_size)]
+        game_board = [["." for x in range(self.board_size)]
+                      for y in range(self.board_size)]
         self.game_board = game_board
         for _ in range(self.number_of_ships):
             x, y = random_coordinates(self.board_size)
@@ -105,7 +106,7 @@ class Battleships_game:
 
     def start_game(self):
         """
-        Displays the welcome screen, initialises the 
+        Displays the welcome screen, initialises the
         game boards, and proceeds to start the game.
         """
         self.display_info()
@@ -149,21 +150,34 @@ class Battleships_game:
                     print("  __/ |                                           ")
                     print(" |___/                                          \n")
                 else:
-                    print(" _  _   _                       _                        _ ")
-                    print("(_)| | ( )                     | |                      | |")
-                    print(" _ | |_|/ ___      __ _      __| | _ __  __ _ __      __| |")
-                    print("| || __| / __|    / _` |    / _` || '__|/ _` |\ \ /\ / /| |")
-                    print("| || |_  \__ \   | (_| |   | (_| || |  | (_| | \ V  V / |_|")
-                    print("|_| \__| |___/    \__,_|    \__,_||_|   \__,_|  \_/\_/  (_) \n")
-                print(" ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗    ")
-                print(" █╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗   ")
-                print(" █║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝   ")
-                print(" █║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ")
-                print(" ██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║██╗")
-                print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝\n")
+                    print(" _  _   _               ")
+                    print("(_)| | ( )              ")
+                    print(" _ | |_|/ ___      __ _ ")
+                    print("| || __| / __|    / _` |")
+                    print("| || |_  \__ \   | (_| |")
+                    print("|_| \__| |___/    \__,_|")
+                    print("        _                       _ ")
+                    print("       | |                     | |")
+                    print("     __| | _ __  __ _ __      _| |")
+                    print("   / _` || '__|/ _` |\ \ /\ / /| |")
+                    print("  | (_| || |  | (_| | \ V  V / |_|")
+                    print("   \__,_||_|   \__,_|  \_/\_/  (_) \n")
+                print(" ██████╗  █████╗ ███╗   ███╗███████╗ ")
+                print(" █╔════╝ ██╔══██╗████╗ ████║██╔════╝ ")
+                print(" █║  ███╗███████║██╔████╔██║█████╗   ")
+                print(" █║   ██║██╔══██║██║╚██╔╝██║██╔══╝   ")
+                print(" ██████╔╝██║  ██║██║ ╚═╝ ██║███████╗ ")
+                print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ")
+                print("     ██████╗ ██╗   ██╗███████╗██████╗    ")
+                print("    ██╔═══██╗██║   ██║██╔════╝██╔══██╗   ")
+                print("    ██║   ██║██║   ██║█████╗  ██████╔╝   ")
+                print("    ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ")
+                print("    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║██╗")
+                print("     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝\n")
+
                 print(f"{self.player_board.user_name}: " +
-                      f"{self.scores['player']} VS. Computer: "
-                      + f"{self.scores['computer']}")
+                      f"{self.scores['player']} VS. Computer: " +
+                      f"{self.scores['computer']}")
                 break
 
             # PLAYER TAKES A GUESS
@@ -214,11 +228,11 @@ class Battleships_game:
     def guess_valid(self, x, y):
         """
         Checks if the coordinates given are within the range of
-        the board size, and if the coordinates have been repeated.   
+        the board size, and if the coordinates have been repeated.
         """
         if not validate_coordinates(x, y, self.board_size):
-            print("Row and column must be a value between"
-                  + f"0 and {self.board_size - 1}")
+            print("Row and column must be a value between" +
+                  f"0 and {self.board_size - 1}")
             return False
         if self.computer_board.guessed_already(x, y):
             print("You cannot guess the same coordinates more than once.")
@@ -255,9 +269,9 @@ class Battleships_game:
             print("That was a \033[1mMISS!\033[0m \n")
         print("The current scores are:")
         print(f"{self.player_board.user_name}: " +
-              f"{self.scores['player']} VS. Computer: "
-              + f"{self.scores['computer']}")
-        print("-" * 150)
+              f"{self.scores['player']} VS. Computer: " +
+              f"{self.scores['computer']}")
+        print("-" * 60)
 
     def display_info(self):
         """
@@ -273,8 +287,8 @@ class Battleships_game:
               "row number and column number to guess the coordinates.")
         print("The top left corner is row: 0 and column: 0\n")
         print("--------------------- LEGEND -------------------------\n")
-        print("(@) = a ship on the battlefield\n(*) = coordinates guessed are"
-              + "a HIT!\n(X) = coordinates guessed are a MISS!\n")
+        print("(@) = a ship on the battlefield\n(*) = coordinates guessed" +
+              "are a HIT!\n(X) = coordinates guessed are a MISS!\n")
         print("-" * 60)
 
 
@@ -283,28 +297,26 @@ class Battleships_game:
 while True:
     print("\n")
     print("██████╗  █████╗ ████████╗████████╗██╗     ███████╗")
-    print("██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝")   
-    print("██████╔╝███████║   ██║      ██║   ██║     █████╗ ")    
-    print("██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝  ")     
-    print("██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗")  
-    print("╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝")   
-    print("   ███████╗██╗  ██╗██╗██████╗ ███████╗ ")
-    print("   ██╔════╝██║  ██║██║██╔══██╗██╔════╝")
-    print("   ███████╗███████║██║██████╔╝███████╗")
-    print("   ╚════██║██╔══██║██║██╔═══╝ ╚════██║")
-    print("   ███████║██║  ██║██║██║     ███████║")
-    print("   ╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝\n")
-    
+    print("██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝")
+    print("██████╔╝███████║   ██║      ██║   ██║     █████╗ ")
+    print("██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝  ")
+    print("██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗")
+    print("╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝")
+    print("      ███████╗██╗  ██╗██╗██████╗ ███████╗ ")
+    print("      ██╔════╝██║  ██║██║██╔══██╗██╔════╝")
+    print("      ███████╗███████║██║██████╔╝███████╗")
+    print("      ╚════██║██╔══██║██║██╔═══╝ ╚════██║")
+    print("      ███████║██║  ██║██║██║     ███████║")
+    print("      ╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝\n")
     board_size = input("What grid size do you want to use? \n")
-    
-    print("                                ")
-    print("                                ")
-    print("  __ _   __ _  _ __ ___    ___  ")
-    print(" / _` | / _` || '_ ` _ \  / _ \ ") 
-    print("| (_| || (_| || | | | | ||  __/ ") 
-    print(" \__, | \__,_||_| |_| |_| \___| ") 
-    print("  __/ |                         ")
-    print(" |___/                          ")
+    print("                                       ")
+    print("                                       ")
+    print("         __ _   __ _  _ __ ___    ___  ")
+    print("        / _` | / _` || '_ ` _ \  / _ \ ")
+    print("       | (_| || (_| || | | | | ||  __/ ")
+    print("        \__, | \__,_||_| |_| |_| \___| ")
+    print("         __/ |                         ")
+    print("        |___/                          ")
     print("\n")
     print("       _                _    _ ")
     print("      | |              | |  (_)")
@@ -315,7 +327,6 @@ while True:
     print("                                       __/ |         ")
     print("                                      |___/          ")
     print("\n")
-    
     try:
         board_size = int(board_size)
         break
