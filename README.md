@@ -14,7 +14,7 @@ Command-line application using python.</h2>
 
 <p>This image is produced using the tool from <a href="http://ami.responsivedesign.is/#" target="_blank">Am I Responsive</a></p>
 
-<p>This battleships application is a terminal based logical game. It is a widely known game played on grids where each player's ships are marked on the grid. The coordinates at which these ships are placed are conceled from the other player.
+<p>This battleships application is a terminal based logical game. It is a widely known game played on grids where each player's ships are marked on the grid. The coordinates at which these ships are placed are concealed from the other player.
 Hence the aim of the game is for players to call shots and make guesses at which coordinates the other player's ships are placed. The final objective is to destroy all the opponent's battleships. This game is designed as a single player game against a computer. The player has the choice of selecting the grid size that they would like. 
  </p>
 
