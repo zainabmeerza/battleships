@@ -38,6 +38,17 @@ include flowchart if u have time
 
 
 <h1><strong>Features</strong></h1>
+<img src="readmeimages/draw.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/you-win.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/you-lose.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+
+<img src="readmeimages/username.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/score.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/repeat-guess.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/input-guesses.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size">
+<img src="readmeimages/gameboards.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+<img src="readmeimages/guess-check.png" alt="screenshot initial landing page of the game, it starts with asking the user for grid size" >
+
 
 
 <h1><strong>Features to Implement in the future:</strong></h1>
@@ -62,6 +73,7 @@ This project is based on Python programming language. The technologies and tools
 </ul>
 
 <h1><strong>Testing</strong></h1>
+<h2>Testing the User Stories</h2>
 <ol>
 <li>As a player, I would like the option to select the size of the board game grid.</li>
 <br>
